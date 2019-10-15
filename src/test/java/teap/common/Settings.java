@@ -14,7 +14,10 @@ public interface Settings
 	public static final String RT_PASSWORD="#Zpass000";
 	
 	//DB Settings
-	public static final String DB_URL = "jdbc:mysql://localhost:3306/cbt_pf_crg_auto";					
+	public static final String DB_HOST="localhost";
+	public static final String DB_PORT="3306";
+	public static final String DB_NAME="cbt_pf_crg_auto";
+	public static final String DB_URL = "jdbc:mysql://"+DB_HOST+":"+DB_PORT+"/"+DB_NAME;					
 	public static final String DB_USERNAME = "admin";	
 	public static final String DB_PASSWORD = "1EORE9SV";
 

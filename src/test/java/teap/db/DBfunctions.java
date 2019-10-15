@@ -12,7 +12,12 @@ public class DBfunctions
 	
 	public static int load_db() throws InterruptedException
 	{
-		String[] db_load_cmd = new String[]{"cmd.exe","/c","mysql.exe --protocol=tcp --host=localhost --user="+ DB_USERNAME +" --password=" + DB_PASSWORD + "  --port=3306 --default-character-set=utf8 --comments --database=cbt_pf_crg  < cbt_pf_crg_20190920.dev.sql"};
+		String mysql_cmd = "mysql.exe --protocol=tcp --host=" + DB_HOST + "  --port=" + DB_PORT + " --database=" + DB_NAME +
+									" --user="+ DB_USERNAME +" --password=" + DB_PASSWORD + 
+									" --default-character-set=utf8 --comments < cbt_pf_crg_20190920.dev.sql";
+		System.out.println(mysql_cmd);
+		
+		String[] db_load_cmd = new String[]{"cmd.exe","/c", mysql_cmd};
 		File working_dir= new File("F:\\Rating_System_Regression_Automation\\DB_Backups\\DB_2Anchorscripts_RatingStart");
 		
 		Process load_db_mysl = null;
@@ -25,8 +30,6 @@ public class DBfunctions
 		}
 		
 		return load_db_mysl.waitFor();
-		
-		
 	}
 	
 	public static Connection est_conn()
