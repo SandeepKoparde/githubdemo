@@ -40,7 +40,7 @@ public class Testcase_POC
 	WebDriver driver = null;
 			
 	@BeforeAll
-	static void init()
+	static void setUpBeforeClass()
 	{
 		putty = Putty.start();
 		System.out.println("Start DB Loading");
@@ -54,7 +54,7 @@ public class Testcase_POC
 	}
 	
 	@BeforeEach
-	void launchApp()
+	void setUp()
 	{
 		driver = LaunchTeapApp.LaunchApp();
 		
@@ -63,7 +63,7 @@ public class Testcase_POC
 	@Test
 	@Order(1)
 	@DisplayName("Setting Up QC Script Incidence Value")
-	void setUp() throws InterruptedException
+	void setUpQCScriptIncidenceValue() throws InterruptedException
 	{
 		HomePage hp=new HomePage(driver);
 		hp.login(RL_USER_ID, RL_PASSWORD);
@@ -148,7 +148,7 @@ public class Testcase_POC
 	}
 	
 	@AfterEach
-	void logout() throws InterruptedException
+	void tearDown() throws InterruptedException
 	{
 		Thread.sleep(3000);
 		CloseApp close = new CloseApp(driver);
@@ -157,7 +157,7 @@ public class Testcase_POC
 	}
 	
 	@AfterAll
-	static void tearDown()
+	static void tearDownAfterClass()
 	{
 		Putty.close(putty);
 	}
