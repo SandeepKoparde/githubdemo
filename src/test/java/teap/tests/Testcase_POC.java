@@ -50,7 +50,7 @@ public class Testcase_POC
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println(db_load_exit_value);	
+		System.out.println("End DB loading. Exit value: " + db_load_exit_value);	
 	}
 	
 	@BeforeEach
@@ -100,13 +100,18 @@ public class Testcase_POC
 		//System.out.println(scriptNo);
 		
 		String section = rp.getSection();
-		System.out.println(section);
+		//System.out.println(section);
 		
 		String testSet = rp.getTestSet();
-		System.out.println(testSet);
+		//System.out.println(testSet);
 		
 		String part = rp.getPart();
-		System.out.println(part);
+		//System.out.println(part);
+		
+		assertAll("Front End Validtions", 	() -> assertEquals("SpeakingRecording", section, "Section"),
+				() -> assertEquals("TST1", testSet, "Test Set" ),
+				() -> assertEquals("Part1-1", part, "Part")
+				);
 		
 		Thread.sleep(15000);
 		rp.rate_script();
@@ -136,11 +141,12 @@ public class Testcase_POC
             
         int stage = rs.getInt(5);
             
-    	assertAll("Database Testing", 	() -> assertEquals(RT_USER_ID, raterId, "Rater ID"),
+    	assertAll("Database Validations", 	() -> assertEquals(RT_USER_ID, raterId, "Rater ID"),
 										() -> assertEquals(sysDate, ratingdate, "Rating Date" ),
-										() -> assertEquals(1,ratingstatus, "Rating Status"),
-										() -> assertEquals(2, ratingCnt, "Rating Count"),
-										() -> assertEquals(3, stage, "Rating Stage"));
+										() -> assertEquals(2,ratingstatus, "Rating Status"),
+										() -> assertEquals(1, ratingCnt, "Rating Count"),
+										() -> assertEquals(4, stage, "Rating Stage")
+										);
 		
 			
 		// closing DB Connection		

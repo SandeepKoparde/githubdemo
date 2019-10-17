@@ -15,7 +15,7 @@ public class DBfunctions
 		String mysql_cmd = "mysql.exe --protocol=tcp --host=" + DB_HOST + "  --port=" + DB_PORT + " --database=" + DB_NAME +
 									" --user="+ DB_USERNAME +" --password=" + DB_PASSWORD + 
 									" --default-character-set=utf8 --comments < cbt_pf_crg_20190920.dev.sql";
-		System.out.println(mysql_cmd);
+		//System.out.println(mysql_cmd);
 		
 		String[] db_load_cmd = new String[]{"cmd.exe","/c", mysql_cmd};
 		File working_dir= new File("F:\\Rating_System_Regression_Automation\\DB_Backups\\DB_2Anchorscripts_RatingStart");
