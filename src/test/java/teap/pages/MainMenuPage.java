@@ -21,5 +21,28 @@ public class MainMenuPage
 		driver.findElement(By.xpath("//button[text()='Rating Scheme Management']")).click();
 	}
 	
+	public void login_user_registration()
+	{
+		driver.findElement(By.xpath("//button[text()='Login user Registration']")).click();
+	}
 	
+	public void pc_configuration_check()
+	{
+		driver.findElement(By.xpath("//button[text()='PC Configuration Check']")).click();
+	}
+
+	public String getCompleteTrainingMessage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void backToMenu() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void training() {
+		// TODO Auto-generated method stub
+		
+	}
 }

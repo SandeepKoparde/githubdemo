@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 @SelectClasses( teap.tests.Testcase_POC.class )
 //@SelectClasses({teap.tests.Testcase_POC.class, teap.tests.Testcase2.class } )
 //@SelectPackages({"Test1","teap.tests"})
+//@SelectPackages("Test1")
 public class Testcase_CasecsRegression {
 
 }
