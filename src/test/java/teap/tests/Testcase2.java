@@ -46,7 +46,7 @@ public class Testcase2 {
 	void user_registeration() {
 		HomePage hp = new HomePage(driver);
 		hp.login(RL_USER_ID, RL_PASSWORD);
-
+		
 		MainMenuPage mnp = new MainMenuPage(driver);
 		mnp.login_user_registration();
 
