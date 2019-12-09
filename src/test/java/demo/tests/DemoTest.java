@@ -16,6 +16,8 @@ import org.openqa.selenium.WebDriver;
 import demo.common.DemoApp;
 import demo.pages.HomePage;
 
+// Test class names MUST end with Test or Tests.
+
 @TestMethodOrder(OrderAnnotation.class)
 public class DemoTest {
 

@@ -25,6 +25,8 @@ import teap.pages.LoginUserRegistration;
 import teap.pages.MainMenuPage;
 import teap.pages.PCConfigurationCheck;
 
+//Test class names MUST end with Test or Tests.
+
 @TestMethodOrder(OrderAnnotation.class)
 public class Testcase2 {
 	static Process putty = null;
