@@ -33,6 +33,8 @@ import teap.pages.MainMenuPage;
 import teap.pages.RatingPage;
 import teap.pages.RatingSchemeManagementPage;
 
+//Test class names MUST end with Test or Tests.
+
 @TestMethodOrder(OrderAnnotation.class)
 public class Testcase_POC
 {	
