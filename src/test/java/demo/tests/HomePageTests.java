@@ -15,6 +15,7 @@ import org.openqa.selenium.WebDriver;
 
 import demo.common.DemoApp;
 import demo.common.General;
+import demo.common.Settings;
 import demo.pages.FlightFinder;
 import demo.pages.HomePage;
 
@@ -66,7 +67,7 @@ public class HomePageTests {
 	void login() {
 		
 		HomePage hp = new HomePage(driver);
-		hp.login("sandykop@gmail.com", "India123$");
+		hp.login(Settings.USER_NAME, "India123$");
 		
 		FlightFinder ff = new FlightFinder(driver);
 		
